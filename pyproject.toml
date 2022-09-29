@@ -1,0 +1,64 @@
+[tool.briefcase]
+project_name = "CypherX"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/cypherx"
+license = "MIT license"
+author = 'TheOne'
+author_email = "theone@example.com"
+
+[tool.briefcase.app.cypherx]
+formal_name = "CypherX"
+description = "To secure what you send!"
+icon = "src/cypherx/resources/cypherx"
+sources = ['src/cypherx']
+requires = [
+]
+
+
+[tool.briefcase.app.cypherx.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev34',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.cypherx.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev34',
+]
+
+[tool.briefcase.app.cypherx.linux.appimage]
+system_requires = [
+    'gir1.2-webkit-3.0',
+    'libcairo2-dev',
+    'libgirepository1.0-dev',
+    'libgtk-3-dev',
+    'libpango1.0-dev',
+    'librsvg2-dev',
+    'libwebkitgtk-3.0-0',
+]
+linuxdeploy_plugins = [
+    'DEPLOY_GTK_VERSION=3 gtk',
+]
+
+[tool.briefcase.app.cypherx.linux.flatpak]
+flatpak_runtime = 'org.gnome.Platform'
+flatpak_runtime_version = '42'
+flatpak_sdk = 'org.gnome.Sdk'
+
+[tool.briefcase.app.cypherx.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev34',
+]
+
+# Mobile deployments
+[tool.briefcase.app.cypherx.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev34',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.cypherx.android]
+requires = [
+    'toga-android>=0.3.0.dev34'
+]
